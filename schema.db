@@ -1,0 +1,14 @@
+CREATE DATABASE `task_weather`
+
+CREATE TABLE `forecast` (
+  `idforecast` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `date_at` datetime NOT NULL,
+  `temperature_min` int(3) NOT NULL,
+  `temperature_max` int(3) NOT NULL,
+  `rain_probability` int(3) NOT NULL,
+  `rain_precipitation` int(3) NOT NULL,
+  `city_id` int(10) NOT NULL,
+  PRIMARY KEY (`idforecast`),
+  UNIQUE KEY `unique_index` (`date_at`,`city_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=226 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+

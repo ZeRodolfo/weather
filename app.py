@@ -2,6 +2,7 @@
 from flask import Flask, Response, json
 from utils import DateConverter
 from database import db_session, init_db
+from services import get_local_forecast
 
 app = Flask(__name__)
 init_db()
