@@ -3,6 +3,10 @@
 from datetime import datetime
 from werkzeug.routing import BaseConverter, ValidationError
 
+def get_diff_days(date_from, date_to):
+    delta = date_to - date_from
+    return delta.days
+    
 class DateConverter(BaseConverter):
     regex = r'\d{4}-\d{2}-\d{2}'
 

@@ -10,7 +10,7 @@ app.url_map.converters['date'] = DateConverter
 
 @app.route("/weather/local/<int:code>/from/<date:date_from>/to/<date:date_to>", methods=['GET'])
 def weather_local(code, date_from, date_to):
-    response_data = []
+    response_data = get_local_forecast(code, date_from, date_to)
     return Response(json.dumps(response_data), status=200, mimetype='application/json')
 
 @app.teardown_appcontext
